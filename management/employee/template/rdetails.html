@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 class="text-center" style="background-color: gray;">ROLE DETAILS</h2>
+<table class="table table-dark table-hover">
+    <thead>
+        <th>s no</th>
+        <th>id</th>
+        <th>Role</th>
+    </thead>
+    {% if data %}
+    <div>
+        {% for d in data %}
+        <tbody>
+            <td>{{ forloop.counter }}</td>
+            <td>{{d.id}}</td>
+            <td>{{d.r_name}}</td>
+        </tbody>
+        {% endfor %}
+    </div>
+    {% endif %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% load static %} {% block title %}HOME{% endblock %} {% if user.is_authenticated %} {% block content %}
+<p>Username : {{user.username}}</p>
+<p> Your Name : {{user.first_name}} {{user.last_name}}</p>
+<p>Email : {{user.email}}</p>
+{% endblock %} {% endif %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %} {% block title %} employe {% endblock %} {% block content %} {% if user.is_authenticated %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">ROLE</h5>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p class="card-text">
+                {% if fm %}
+                <div>
+                    {% for f in fm %}
+                    <p>{{f}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </p>
+            <button type="submit" class="btn btn-primary signup">ADD</button>
+        </form>
+    </div>
+    <button class="btn btn-secondary"><a class="nav-link active" style="color: bisque;" aria-current="page" href="{% url 'rdetails' %}">DETAILS</a></button>
+</div>
+{% endif %} {% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 class="text-center" style="background-color: gray;">DEPARTMENT DETAILS</h2>
+<table class="table table-dark table-hover">
+    <thead>
+        <th>s no</th>
+        <th>id</th>
+        <th>department</th>
+        <th>location</th>
+        <th> Delete</th>
+        <th>Edit</th>
+    </thead>
+    {% if data %}
+    <div>
+        {% for d in data %}
+        <tbody>
+            <td>{{ forloop.counter }}</td>
+            <td>{{d.id}}</td>
+            <td>{{d.name}}</td>
+            <td>{{d.location}}</td>
+            <td><a class="nav-link active" style="color: rgb(238, 17, 17);" aria-current="page" href="{% url 'ddelete' d.id %}">DELETE</a></td>
+            <td><a class="nav-link active" style="color: rgb(89, 79, 233);" aria-current="page" href="{% url 'dedit' d.id %}">EDIT</a></td>
+        </tbody>
+        {% endfor %}
+    </div>
+    {% endif %}
+</table>
+
+{% endblock %}
